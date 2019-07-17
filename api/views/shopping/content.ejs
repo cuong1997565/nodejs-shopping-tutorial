@@ -1,0 +1,30 @@
+ <% products.forEach(function(product, index){ %>
+    <%= product  %>
+ <% }); %>
+
+
+<div class="row">
+ <% products.forEach(function(product){ %>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="https://media.wired.com/photos/5b22c5c4b878a15e9ce80d92/master/pass/iphonex-TA.jpg" alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p class="description">An academic letter of recommendation is required by any student going to study
+                    abroad. Irrespective
+                    of course (UG, MS, MBA, or PhD) and country, every student requires at least three letters of
+                    recommendation from either their college or professional background. For UG, students, LORs can be
+                    taken from teachers, professors, school counsellors or principal.
+                </p>
+                <div class="clearfix">
+                    <div class="price pull-left">
+                    $12
+                </div>
+                <p> <a href="#" class="btn btn-success pull-right" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<% }); %>
+
+</div>

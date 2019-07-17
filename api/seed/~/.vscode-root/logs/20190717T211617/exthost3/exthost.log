@@ -1,0 +1,24 @@
+[2019-07-17 21:29:51.461] [exthost] [info] extension host started
+[2019-07-17 21:29:51.493] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.493] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-07-17 21:29:51.502] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.502] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-07-17 21:29:51.530] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.530] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2019-07-17 21:29:51.709] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.709] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-07-17 21:29:51.718] [exthost] [info] ExtensionService#_doActivateExtension bierner.color-info {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.718] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/bierner.color-info-0.5.1/out/src/extension
+[2019-07-17 21:29:51.869] [exthost] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.869] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/dbaeumer.vscode-eslint-1.9.0/client/out/extension
+[2019-07-17 21:29:51.938] [exthost] [info] ExtensionService#_doActivateExtension EditorConfig.EditorConfig {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:51.938] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/editorconfig.editorconfig-0.13.0/out/src/editorConfigMain
+[2019-07-17 21:29:52.029] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:52.029] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/formulahendry.auto-close-tag-0.5.6/out/src/extension
+[2019-07-17 21:29:52.034] [exthost] [info] ExtensionService#_doActivateExtension formulahendry.auto-rename-tag {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:52.034] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/formulahendry.auto-rename-tag-0.1.0/out/src/extension
+[2019-07-17 21:29:52.042] [exthost] [info] ExtensionService#_doActivateExtension pranaygp.vscode-css-peek {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:52.042] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/pranaygp.vscode-css-peek-3.0.2/out/client/src/extension
+[2019-07-17 21:29:52.130] [exthost] [info] ExtensionService#_doActivateExtension vscode-icons-team.vscode-icons {"startup":true,"activationEvent":"*"}
+[2019-07-17 21:29:52.130] [exthost] [info] ExtensionService#loadCommonJSModule /home/admin123/.vscode/extensions/vscode-icons-team.vscode-icons-8.8.0/out/src/
+[2019-07-17 21:29:52.330] [exthost] [info] eager extensions activated
