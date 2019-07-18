@@ -10,7 +10,7 @@ exports.product_list = (req, res, next) => {
             // for(var i = 0 ; i < result.length; i += chunlSize) {
             //         productChunks.push(result.slice(i, i+ chunlSize));
             // }
-            res.render('layout/layout', { title: 'Shopping Cart', products: result});
+            res.render('shopping/content', { title: 'Shopping Cart', products:result});
         }).catch(err => {
             console.log(err);
             res.status(500).json({
