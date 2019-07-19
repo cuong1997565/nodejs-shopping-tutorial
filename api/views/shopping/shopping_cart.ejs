@@ -1,0 +1,47 @@
+<% include ../layout/head %>
+<% include ../header/header %>
+<% if(products){ %>
+<div class="row">
+   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <ul class="list-group">
+        <% products.forEach(function(product, index){ %>
+         <li class="list-group-item">
+            <span class="badge"> <%= product.qty %> </span>
+            <strong> <%= product.item.title %> </strong>
+            <span class="label label-success" style="margin-right:15px">
+            $ <%= product.item.price %>
+            </span>
+            <div class="btn-group">
+               <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+               Action <span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu">
+                  <li><a href="#">Reduce by 1</a></li>
+                  <li><a href="#">Remove All</a></li>
+               </ul>
+            </div>
+         </li>
+         <% }); %>
+      </ul>
+   </div>
+</div>
+<div class="row">
+   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <strong> Total : <%= totalPrice %> </strong>        
+   </div>
+</div>
+<hr>
+<div class="row">
+   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <a href="/carts/checkout"  class="btn btn-success">Checkout</a>    
+   </div>
+</div>
+<% } else{  %>
+<div class="row">
+   <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+      <h2>No Items in Cart</h2>
+   </div>
+</div>
+<% } %>
+<% include ../layout/footer %>

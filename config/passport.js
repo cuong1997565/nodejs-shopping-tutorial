@@ -54,7 +54,6 @@ passport.use('local.signin', new LocalStrategy({
     req.checkBody('email','Imvalid email').notEmpty().isEmail();
     req.checkBody('password','Imvalid password').notEmpty();
     var errors = req.validationErrors();
-    console.log(errors);
     if(errors) {
         var messages = [];
         errors.forEach(function(error){
