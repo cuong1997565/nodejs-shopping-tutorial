@@ -1,10 +1,11 @@
 <% include ../layout/head %>
 <% include ../header/header %>
-<% if(products){ %>
+<% if(products.length > 0){ %>
 <div class="row">
    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
       <ul class="list-group">
         <% products.forEach(function(product, index){ %>
+        <%= JSON.stringify(product) %>
          <li class="list-group-item">
             <span class="badge"> <%= product.qty %> </span>
             <strong> <%= product.item.title %> </strong>
@@ -17,8 +18,8 @@
                Action <span class="caret"></span>
                </button>
                <ul class="dropdown-menu">
-                  <li><a href="#">Reduce by 1</a></li>
-                  <li><a href="#">Remove All</a></li>
+                  <li><a href="/carts/reduce/<%= product.item._id %>">Reduce by 1</a></li>
+                  <li><a href="/carts/remove/<%= product.item._id %>">Remove All</a></li>
                </ul>
             </div>
          </li>

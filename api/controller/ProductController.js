@@ -6,6 +6,8 @@ exports.product_list = (req, res, next) => {
         .exec()
         .then(result => {
             var totalQty = 0;
+            var successMsg = req.flash('success')[0];
+            console.log(successMsg);
             if( req.session.cart != undefined ) {
                 totalQty =  req.session.cart.totalQty;
             }
@@ -14,7 +16,12 @@ exports.product_list = (req, res, next) => {
             // for(var i = 0 ; i < result.length; i += chunlSize) {
             //         productChunks.push(result.slice(i, i+ chunlSize));
             // }
-            res.render('shopping/content', { title: 'Shopping Cart', products:result, totalQty: totalQty});
+            res.render('shopping/content', { 
+                title: 'Shopping Cart', 
+                products:result, 
+                totalQty: totalQty,
+                successMsg: successMsg, 
+                noMessages: !successMsg});
         }).catch(err => {
             console.log(err);
             res.status(500).json({

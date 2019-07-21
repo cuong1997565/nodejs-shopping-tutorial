@@ -1,6 +1,7 @@
 const Product = require('../models/product');
 const mongoose = require("mongoose");
 const Cart = require('../models/cart');
+const Order = require('../models/order');
 
 exports.addToCart = (req, res, next) => {
     var productId = req.params.id;
@@ -13,6 +14,23 @@ exports.addToCart = (req, res, next) => {
         req.session.cart = cart;
         res.redirect('/products');
     })
+}
+
+
+exports.reduceByOne = (req, res, next) => {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    cart.reduceByOne(productId);
+    req.session.cart = cart;
+    res.redirect('/carts/shopping-cart')
+}
+
+exports.removeItem = (req, res, next) => {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+    cart.removeItem(productId);
+    req.session.cart = cart;
+    res.redirect('/carts/shopping-cart')
 }
 
 exports.shoppingCart = (req, res, next) => {
@@ -52,15 +70,24 @@ exports.postCheckCart = (req, res, next) => {
     stripe.charges.create({
         amount: cart.totalPrice * 100,
         currency: "usd",
-        source: req.body.stripeToken,
+        source: req.body.stripeToken, // obtained with Stripe.js
         description: "Test Charge"
     }, function(err, charge){
         if(err) {
             req.flash('error', err.message);
             return res.redirect('/carts/checkout');
         }
-        req.flash('success', 'Successfully bought product!');
-        req.cart = null;
-        res.redirect('/products');
+        var order = new Order({
+            user: req.user,
+            cart: cart,
+            address : req.body.address,
+            name : req.body.name,
+            paymentId : charge.id
+        });
+        order.save(function(err, result){
+            req.flash('success', 'Successfully bought product!');
+            req.session.cart = null;
+            res.redirect('/products');
+        });
     });
 }

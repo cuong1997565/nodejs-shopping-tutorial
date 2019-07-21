@@ -5,6 +5,11 @@
   .thumbnail .description{
     color: #7f7f7f;
   }
+
+  .thumbnail .caption h3 {
+    font-size: 19px;
+  }
+
   .thumbnail .price {
     font-weight: bold;
     font-size: 16px;

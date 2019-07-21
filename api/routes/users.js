@@ -21,16 +21,35 @@ router.use(function (req, res, next) {
 
 router.get('/singnup/', UserController.getSingnUp);
 router.post('/singnup/',passport.authenticate('local.signup', {
-    successRedirect: '/users/profile',
     failureRedirect: '/users/singnup',
     failureFlash: true
-}));
+}), function(req, res, next){
+    if(req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        console.log(oldUrl);
+        req.session.oldUrl = null;
+        req.redirect(oldUrl);
+    } else {
+        res.redirect('/users/profile');
+    } 
+});
+
+
+
 router.get('/signin', UserController.getSignin);
 router.post('/signin',passport.authenticate('local.signin', {
-    successRedirect: '/users/profile',
     failureRedirect: '/users/signin',
     failureFlash: true
-}));
+}), function(req, res, next){
+    if(req.session.oldUrl) {
+        var oldUrl = req.session.oldUrl;
+        console.log(oldUrl);
+        // req.session.oldUrl = null;
+        req.redirect(oldUrl);
+    } else {
+        res.redirect('/users/profile');
+    } 
+});
 
 router.get('/logout',UserController.logout);
 

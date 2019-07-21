@@ -2,9 +2,14 @@
 <% include ../header/header %>
 <div class="container">
     <div class="row">
+        <div id="success" class="alert alert-success" <% if(noMessages){ %> hidden <%}%> >
+            <%= successMsg %>
+        </div>
+    </div>
+    <div class="row">
         <% products.forEach(function(product, index){ %>
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
+       <div class="col-sm-6 col-md-4">
+            <div class="thumbnail" style="height:350px">
                 <img src=<%= product.imagePath %> alt=<%= product.imagePath %>>
                 <div class="caption">
                     <h3> <%= product.title  %> </h3>
